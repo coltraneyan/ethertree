@@ -18,7 +18,7 @@ function App() {
       const historyGetter = await provider.getHistory(address);
       const txList = new Set();
       historyGetter.forEach((tx) => {
-        txList.add(tx.from == parseInt(address) ? tx.to : tx.from);
+        txList.add(tx.from === parseInt(address) ? tx.to : tx.from);
       });
 
       setTree([...txList].slice(0, 20));

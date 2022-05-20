@@ -9,3 +9,22 @@
   transform: translateX(-50%);
   top: 50%;
 }
+
+.node-wrapper {
+  border: 1px solid black;
+  border-radius: 50%;
+  background: white;
+  width: 5px;
+  height: 5px;
+}
+
+.address-node {
+  visibility: hidden;
+  position: relative;
+  top: 350%;
+  left: -3500%;
+}
+
+.node-wrapper:hover .address-node {
+  visibility: initial;
+}

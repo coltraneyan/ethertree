@@ -1,47 +1,44 @@
 import React from "react";
+import Xarrow from "react-xarrows";
 
-const positionList = [
-  { left: "20%", top: "50%" },
-  { left: "25%", top: "55%" },
-  { left: "30%", top: "60%" },
-  { left: "35%", top: "65%" },
-  { left: "40%", top: "70%" },
-  { left: "50%", top: "75%" },
-  { left: "60%", top: "70%" },
-  { left: "65%", top: "65%" },
-  { left: "70%", top: "60%" },
-  { left: "75%", top: "55%" },
-  { left: "80%", top: "50%" },
-  { left: "75%", top: "45%" },
-  { left: "70%", top: "40%" },
-  { left: "65%", top: "35%" },
-  { left: "60%", top: "30%" },
-  { left: "50%", top: "25%" },
-  { left: "40%", top: "30%" },
-  { left: "35%", top: "35%" },
-  { left: "30%", top: "40%" },
-  { left: "25%", top: "45%" },
-];
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min) + min);
+}
 
 const Tree = (props) => {
   return (
     <div className="flow-container">
-      <div className="central-node">{props.address}</div>
+      <div className="central-node" id="a">
+        {props.address}
+      </div>
       {[...props.tree].map((tx, i) => (
         <div
-          id={i}
+          className="node-wrapper"
+          id={tx}
           onClick={(e) => {
-            props.triggerFetch(e.target.innerHTML);
+            props.triggerFetch(e.target.id);
           }}
           style={{
             position: "absolute",
-            left: `${positionList[i].left}`,
+            left: `${getRandomInt(20, 80)}%`,
             transform: "translateX(-50%)",
-            top: `${positionList[i].top}`,
+            top: `${getRandomInt(20, 80)}%`,
           }}
         >
-          {tx}
+          <div className="address-node">{tx}</div>
         </div>
+      ))}
+      {[...props.tree].map((tx, i) => (
+        <Xarrow
+          start="a" //can be react ref
+          end={tx} //or an id
+          startAnchor="middle"
+          showHead={false}
+          strokeWidth={1}
+          curveness={0}
+        />
       ))}
     </div>
   );

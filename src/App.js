@@ -34,9 +34,18 @@ function App() {
 
   function triggerFetch(newAddress) {
     setDisplay("loading");
+    checkAddress(newAddress);
     setAddress(newAddress);
+  }
+
+  async function checkAddress(newAddress) {
     try {
-      ethers.utils.getIcapAddress(address);
+      const provider = new ethers.providers.EtherscanProvider(
+        "homestead",
+        "GA5DBDU9R58E28EUTCVD9KA3H3FXBP5MH94"
+      );
+
+      const historyGetter = await provider.getBalance(newAddress);
     } catch (error) {
       setDisplay("error");
     }

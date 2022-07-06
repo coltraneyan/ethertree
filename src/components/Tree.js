@@ -58,25 +58,31 @@ const Tree = (props) => {
   }
 
   if (props.display === "loading") {
-    return <div className="flavour-text">fetching data from blockchain...</div>;
+    return (
+      <div className="flow-container">
+        <div className="flavour-text">/ fetching data from blockchain... /</div>
+      </div>
+    );
   }
 
   if (props.display === "default") {
     return (
-      <div className="flavour-text">
-        welcome to ethertree<br></br>
-        <br></br>
-        enter a valid 0x address to explore the blockchain
+      <div className="flow-container">
+        <div className="flavour-text">
+          / welcome to ethertree /<br></br>
+          <br></br>/ enter a valid 0x address to explore its history /
+        </div>
       </div>
     );
   }
 
   if (props.display === "error") {
     return (
-      <div className="flavour-text">
-        something went wrong<br></br>
-        <br></br>
-        enter a valid 0x address and try again
+      <div className="flow-container">
+        <div className="flavour-text">
+          ! something went wrong !<br></br>
+          <br></br>/ enter a valid 0x address and try again /
+        </div>
       </div>
     );
   }

@@ -8,7 +8,7 @@ function getRandomInt(min, max) {
 }
 
 function pseudoPadding(bottom, top) {
-  if (Math.round(Math.random() * 1 + 1) == 1) {
+  if (Math.round(Math.random() * 1 + 1) === 1) {
     return top;
   } else {
     return bottom;

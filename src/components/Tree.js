@@ -7,6 +7,14 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
 
+function pseudoPadding(bottom, top) {
+  if (Math.round(Math.random() * 1 + 1) == 1) {
+    return top;
+  } else {
+    return bottom;
+  }
+}
+
 const Tree = (props) => {
   return (
     <div className="flow-container">
@@ -24,7 +32,10 @@ const Tree = (props) => {
             position: "absolute",
             left: `${getRandomInt(20, 80)}%`,
             transform: "translateX(-50%)",
-            top: `${getRandomInt(20, 80)}%`,
+            top: `${pseudoPadding(
+              getRandomInt(20, 45),
+              getRandomInt(55, 80)
+            )}%`,
           }}
         >
           <div className="address-node">{tx}</div>
@@ -35,6 +46,7 @@ const Tree = (props) => {
           start="a" //can be react ref
           end={tx} //or an id
           startAnchor="middle"
+          endAnchor="middle"
           showHead={false}
           strokeWidth={1}
           curveness={0}

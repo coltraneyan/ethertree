@@ -4,7 +4,7 @@ const Input = (props) => {
   const [input, setInput] = useState("");
 
   return (
-    <div>
+    <div className="input-wrapper">
       <input
         value={input}
         type="text"

@@ -1,3 +1,7 @@
+html {
+  margin: 0;
+}
+
 .flow-container {
   width: 90vw;
   height: 90vh;
@@ -8,6 +12,11 @@
   left: 50%;
   transform: translateX(-50%);
   top: 50%;
+  z-index: 1;
+  background-color: grey;
+  border: 1px solid blue;
+  color: white;
+  padding: 0.25rem;
 }
 
 .node-wrapper {
@@ -27,4 +36,9 @@
 
 .node-wrapper:hover .address-node {
   visibility: initial;
+}
+
+.input-wrapper {
+  width: 100vw;
+  background-color: grey;
 }

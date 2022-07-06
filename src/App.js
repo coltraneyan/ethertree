@@ -7,6 +7,7 @@ import Tree from "./components/Tree.js";
 function App() {
   const [tree, setTree] = useState("");
   const [address, setAddress] = useState("");
+  const [display, setDisplay] = useState("default");
 
   useEffect(() => {
     async function fetchHistory(address) {
@@ -24,19 +25,26 @@ function App() {
       });
 
       setTree([...txList].slice(0, 20));
+
+      setDisplay("working");
     }
 
     fetchHistory(address);
   }, [address]);
 
   function triggerFetch(newAddress) {
+    setDisplay("loading");
     setAddress(newAddress);
   }
-
   return (
     <div>
       <Input triggerFetch={triggerFetch} />
-      <Tree tree={tree} triggerFetch={triggerFetch} address={address} />
+      <Tree
+        tree={tree}
+        triggerFetch={triggerFetch}
+        address={address}
+        display={display}
+      />
     </div>
   );
 }

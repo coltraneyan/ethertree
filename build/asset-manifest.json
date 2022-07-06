@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ethertree/static/css/main.a136ee43.css",
+    "main.js": "/ethertree/static/js/main.ee41ce92.js",
+    "index.html": "/ethertree/index.html",
+    "main.a136ee43.css.map": "/ethertree/static/css/main.a136ee43.css.map",
+    "main.ee41ce92.js.map": "/ethertree/static/js/main.ee41ce92.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a136ee43.css",
+    "static/js/main.ee41ce92.js"
+  ]
+}

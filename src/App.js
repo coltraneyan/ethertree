@@ -35,7 +35,13 @@ function App() {
   function triggerFetch(newAddress) {
     setDisplay("loading");
     setAddress(newAddress);
+    try {
+      ethers.utils.getIcapAddress(address);
+    } catch (error) {
+      setDisplay("error");
+    }
   }
+
   return (
     <div>
       <Input triggerFetch={triggerFetch} />

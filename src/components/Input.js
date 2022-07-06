@@ -5,15 +5,18 @@ const Input = (props) => {
 
   return (
     <div className="input-wrapper">
-      <input
-        value={input}
-        type="text"
-        placeholder="Ethereum Address"
-        onChange={(e) => setInput(e.target.value)}
-      />
-      <button type="submit" onClick={() => props.triggerFetch(input)}>
-        Submit
-      </button>
+      <div>
+        <input
+          value={input}
+          type="text"
+          placeholder="Ethereum Address"
+          onChange={(e) => setInput(e.target.value)}
+        />
+        <button type="submit" onClick={() => props.triggerFetch(input)}>
+          Search
+        </button>
+      </div>
+      <div>ethertree _ a graph-based ethereum block explorer</div>
     </div>
   );
 };

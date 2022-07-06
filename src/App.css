@@ -1,10 +1,14 @@
-html {
-  margin: 0;
+body {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  font-family: monospace;
 }
 
 .flow-container {
-  width: 90vw;
-  height: 90vh;
+  height: 92.5vh;
+  background-color: white;
 }
 
 .central-node {
@@ -39,6 +43,28 @@ html {
 }
 
 .input-wrapper {
-  width: 100vw;
-  background-color: grey;
+  background-color: whitesmoke;
+  color: blue;
+  padding: 20px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input-wrapper input {
+  all: unset;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid blue;
+  color: blue;
+  margin-right: 10px;
+}
+
+.input-wrapper button {
+  all: unset;
+  padding: 8px;
+  border-radius: 5px;
+  color: white;
+  background-color: black;
 }

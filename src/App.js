@@ -44,8 +44,7 @@ function App() {
         "homestead",
         "GA5DBDU9R58E28EUTCVD9KA3H3FXBP5MH94"
       );
-
-      const historyGetter = await provider.getBalance(newAddress);
+      await provider.getBalance(newAddress);
     } catch (error) {
       setDisplay("error");
     }

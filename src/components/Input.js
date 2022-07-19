@@ -5,7 +5,7 @@ const Input = (props) => {
 
   return (
     <div className="input-wrapper">
-      <div>
+      <div className="right-wrapper">
         <input
           value={input}
           type="text"
